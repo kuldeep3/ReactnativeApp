@@ -1,46 +1,38 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-  Button,
-  Alert,
-} from "react-native";
+import { View } from "react-native";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello react native</Text>
-      <TouchableOpacity onPress={() => console.log("Image tapped")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        ></Image>
-      </TouchableOpacity>
-      <Button
-        title="Click Me"
-        onPress={() =>
-          Alert.alert("My title", "My message", [
-            { text: "Yes", onPress: () => console.log("Yes") },
-            { text: "No", onPress: () => console.log("NO") },
-          ])
-        }
+    <View
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: 100,
+          height: 300,
+        }}
       />
-    </SafeAreaView>
+      <View
+        style={{
+          backgroundColor: "gold",
+          width: 100,
+          height: 200,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+        }}
+      />
+    </View>
   );
 }
-
-let styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
