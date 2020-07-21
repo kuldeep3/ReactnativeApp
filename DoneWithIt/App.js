@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import AppText from "./app/components/AppText/AppText";
+import AppText from "./app/components/AppText";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function App() {
