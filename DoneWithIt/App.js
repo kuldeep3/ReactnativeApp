@@ -1,19 +1,17 @@
-import React from "react";
-import { View, Text } from "react-native";
-import AppText from "./app/components/AppText";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppButton from "./app/components/AppButton";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import Card from "./app/components/Card";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
+import React, { useState } from "react";
 import Screen from "./app/components/Screen";
-import Icon from "./app/components/Icon";
-import ListItem from "./app/components/ListItem";
-import AccountScreen from "./app/screens/AccountScreen";
-import ListingScreen from "./app/screens/ListingScreen";
+import { Switch } from "react-native";
+import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
-  return <ListingScreen />;
+  const [isNew, setIsNew] = useState(false);
+  return (
+    <Screen>
+      <AppTextInput placeholder="Username" icon="email" />
+      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
+      <AppPicker placeholder="Category" />
+      <AppTextInput placeholder="Email" />
+    </Screen>
+  );
 }
