@@ -3,15 +3,25 @@ import Screen from "./app/components/Screen";
 import { Switch } from "react-native";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 
 export default function App() {
-  const [isNew, setIsNew] = useState(false);
+  // const categories = [
+  //   { label: "Furniture", value: 1 },
+  //   { label: "Food", value: 2 },
+  //   { label: "Clothing", value: 3 },
+  // ];
+  // const [category, setCategory] = useState(categories[0]);
   return (
-    <Screen>
-      <AppTextInput placeholder="Username" icon="email" />
-      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
-      <AppPicker placeholder="Category" />
-      <AppTextInput placeholder="Email" />
-    </Screen>
+    // <Screen>
+    //   <AppPicker
+    //     selectedItem={category}
+    //     onSelectItem={(item) => setCategory(item)}
+    //     items={categories}
+    //     icon="apps"
+    //     placeholder="Category"
+    //   />
+    // </Screen>
+    <LoginScreen />
   );
 }
