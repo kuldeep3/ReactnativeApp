@@ -4,6 +4,9 @@ import { Switch } from "react-native";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ListingScreen from "./app/screens/ListingScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
   // const categories = [
@@ -22,6 +25,7 @@ export default function App() {
     //     placeholder="Category"
     //   />
     // </Screen>
-    <LoginScreen />
+    // <LoginScreen />
+    <MessagesScreen />
   );
 }
