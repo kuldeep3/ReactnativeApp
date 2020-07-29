@@ -6,20 +6,27 @@ import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 import AppFormPicker from "../components/forms/FormPicker";
 import Screen from "../components/Screen";
 import CategoryPickerItem from "../components/CategoryPickerItem";
+import FormImagePicker from "../components/forms/FormImagePicker";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
   price: Yup.number().required().min(1).max(10000).label("Price"),
   description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
+  images: Yup.array().min(1, "Please select at least one image"),
 });
 
 const categories = [
   { label: "Furniture", value: 1, backgroundColor: "red", icon: "lamp" },
   { label: "Cars", value: 2, backgroundColor: "orange", icon: "car" },
   { label: "Camera", value: 3, backgroundColor: "gold", icon: "camera" },
-  { label: "Games", value: 4, backgroundColor: "lightgreen", icon: "cards" },
-  { label: "Clothing", value: 5, backgroundColor: "aqua", icon: "shopping" },
+  { label: "Games", value: 4, backgroundColor: "#26de81", icon: "cards" },
+  {
+    label: "Clothing",
+    value: 5,
+    backgroundColor: "#2bcbba",
+    icon: "shoe-heel",
+  },
   {
     label: "Sports",
     value: 6,
@@ -45,10 +52,12 @@ function ListingEditScreen(params) {
           price: "",
           description: "",
           category: null,
+          images: [],
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <FormImagePicker name="images" />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           keyboardType="numeric"

@@ -11,6 +11,8 @@ import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ListingScreen from "./app/screens/ListingScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import ImageInput from "./app/components/ImageInput";
+import ImageInputList from "./app/components/ImageInputList";
 
 export default function App() {
   // const requestPermission = async () => {
@@ -27,16 +29,16 @@ export default function App() {
   // ];
   // const [category, setCategory] = useState(categories[0]);
 
-  const [imageUri, setImageUri] = useState();
+  // const [imageUris, setImageUris] = useState([]);
 
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) setImageUri(result.uri);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleAdd = (uri) => {
+  //   setImageUris([...imageUris, uri]);
+  // };
+
+  // const handleRemove = (uri) => {
+  //   setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  // };
+
   return (
     // <Screen>
     //   <AppPicker
@@ -48,11 +50,14 @@ export default function App() {
     //   />
     // </Screen>
     // <LoginScreen />
-    // <ListingEditScreen />
+    <ListingEditScreen />
 
-    <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
-    </Screen>
+    // <Screen>
+    //   <ImageInputList
+    //     imageUris={imageUris}
+    //     onAddImage={handleAdd}
+    //     onRemoveImage={handleRemove}
+    //   />
+    // </Screen>
   );
 }
