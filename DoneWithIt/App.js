@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Screen from "./app/components/Screen";
 import { Switch } from "react-native";
-import AppTextInput from "./app/components/AppTextInput";
-import AppPicker from "./app/components/AppPicker";
+import AppTextInput from "./app/components/TextInput";
+import AppPicker from "./app/components/Picker";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ListingScreen from "./app/screens/ListingScreen";
